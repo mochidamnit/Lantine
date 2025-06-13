@@ -1,95 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- remix icon cdn link  -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>The Garden Cafe</title>
+    <title>Latine Cafe</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .hero {
+            height: 300px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .intro {
+            padding: 40px;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+        }
+        .gallery div {
+            background-color: #ccc;
+            height: auto;
+            aspect-ratio: auto;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            background-color: #f0f0f0;
+            padding: 30px;
+            flex-wrap: wrap;
+        }
+        .footer-column {
+            flex: 1 1 200px;
+            margin: 10px;
+        }
+        .footer-column h3 {
+            margin-bottom: 10px;
+        }
+        .footer-column p, .footer-column a {
+            margin: 5px 0;
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+        .social-icons a {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="logo">
+            <img src="png/logo.png" alt="Latine Logo" height="90">
+        </div>
+        <nav>
+            <a href="#">Welcome</a>
+            <a href="#">Menu</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </header>
 
-    <!-- header section starts  -->
+    <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="hero-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
 
-    <!-- header section ends  -->
+    <section class="intro">
+        <h1>Hello there!</h1>
+        <p>Welcome to LATINE: a poetic new Chinese style cafe. Blending new Chinese-style aesthetics with Song Dynasty-inspired elegance.</p>
+        <!-- Decorative Chinese characters or elements could go here -->
+        <p style="font-size: 1.5rem;">× × × × × × × × × × × × × × × × × × × × ×</p>
+    </section>
 
+    <section class="gallery">
+        <!-- Placeholder image boxes with different heights -->
+        <div><img src="https://via.placeholder.com/400x300" alt="Gallery image 1"></div>
+        <div><img src="https://via.placeholder.com/400x500" alt="Gallery image 2"></div>
+        <div><img src="https://via.placeholder.com/400x250" alt="Gallery image 3"></div>
+        <div><img src="https://via.placeholder.com/400x400" alt="Gallery image 4"></div>
+        <div><img src="https://via.placeholder.com/400x350" alt="Gallery image 5"></div>
+        <div><img src="https://via.placeholder.com/400x450" alt="Gallery image 6"></div>
+    </section>
 
-    <!-- search-form start -->
-
-    <!-- search-form end -->
-
-
-    <!-- shopping-cart section start -->
-
-    <!-- shopping-cart section end -->
-
-
-    <!-- login-form start -->
-
-    <!-- login-form end -->
-
-
-    <!-- home section starts  -->
-
-    <!-- home section ends  -->
-
-
-    <!-- category section starts  -->
-
-    <!-- category section ends -->
-
-
-    <!-- about section starts  -->
-
-    <!-- about section ends -->
-
-
-    <!-- popular section starts  -->
-
-    <!-- popular section ends -->
-
-
-    <!-- banner section starts  -->
-
-    <!-- banner section ends -->
-
-
-    <!-- menu section starts  -->
-
-    <!-- menu section ends -->
-
-
-    <!-- order section starts  -->
-
-    <!-- order section ends -->
-
-
-    <!-- blogs section starts  -->
-
-    <!-- blogs section ends -->
-
-
-    <!-- footer section starts  -->
-
-    <!-- footer section ends -->
-
-
-
-
-    <!-- custom js file link  -->
-    <script src="js/script.js"></script>
-
+    <footer>
+        <div class="footer-column">
+            <img src="png/logo.png" alt="Latine Logo" height="50">
+            <p>103 Rangoon Rd, #01-01<br>Singapore 218386</p>
+            <p>FOLLOW US</p>
+            <div class="social-icons">
+                <a href="#">📘</a>
+                <a href="#">📷</a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>QUICK LINKS</h3>
+            <a href="#">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-column">
+            <h3>OPENING HOURS</h3>
+            <p>Monday | Closed</p>
+            <p>Tuesday | 12pm - 10:30pm</p>
+            <p>Wednesday | ______</p>
+            <p>Thursday | ______</p>
+            <p>Friday | ______</p>
+            <p>Saturday | ______</p>
+            <p>Sunday | ______</p>
+        </div>
+    </footer>
 </body>
-
 </html>
