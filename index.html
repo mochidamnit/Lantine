@@ -44,23 +44,64 @@
             padding: 40px;
             text-align: center;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 40px;
-        }
-        .gallery div {
-            background-color: #ccc;
-            height: auto;
-            aspect-ratio: auto;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
+        
+      .gallery-wrapper {
+      width: 100vw;
+      overflow: hidden;
+      background: white;
+      position: relative;
+      touch-action: pan-y;
+    }
+
+    .scroll-container {
+      display: flex;
+      flex-wrap: nowrap;
+      will-change: transform;
+      cursor: grab;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 20px;
+      padding: 40px;
+      margin: 50px;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .gallery a {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .gallery img {
+      height: 360px;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Floating Tooltip */
+    #tooltip {
+      position: fixed;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 35px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 9999;
+      white-space: nowrap;
+    } 
+           
+
         footer {
             display: flex;
             justify-content: space-around;
@@ -117,17 +158,37 @@
 
     <section class="gallery">
         <!-- Placeholder image boxes with different heights -->
-        <div><img src="https://via.placeholder.com/400x300" alt="Gallery image 1"></div>
+        <!-- <div><img src="jpg/gal1.jpg" alt="Gallery image 1"></div>
         <div><img src="https://via.placeholder.com/400x500" alt="Gallery image 2"></div>
         <div><img src="https://via.placeholder.com/400x250" alt="Gallery image 3"></div>
         <div><img src="https://via.placeholder.com/400x400" alt="Gallery image 4"></div>
         <div><img src="https://via.placeholder.com/400x350" alt="Gallery image 5"></div>
         <div><img src="https://via.placeholder.com/400x450" alt="Gallery image 6"></div>
+    -->
+
+        <div class="gallery-wrapper" id="galleryWrapper">
+      <div class="scroll-container" id="scrollContainer">
+        <div class="gallery">
+            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+        </div>
+        <div class="gallery" id="galleryClone"></div>
+      </div>
+      <div id="tooltip"></div>
+    </div>
     </section>
+
+
 
     <footer>
         <div class="footer-column">
-            <img src="png/logo.png" alt="Latine Logo" height="50">
+            <img src="png/logo.png" alt="Latine Logo" height="70">
             <p>103 Rangoon Rd, #01-01<br>Singapore 218386</p>
             <p>FOLLOW US</p>
             <div class="social-icons">
@@ -153,5 +214,78 @@
             <p>Sunday | ______</p>
         </div>
     </footer>
+
+<script>
+  const scrollContainer = document.getElementById('scrollContainer');
+  const originalGallery = scrollContainer.querySelector('.gallery');
+  const cloneGallery = document.getElementById('galleryClone');
+  const tooltip = document.getElementById('tooltip');
+
+  // Clone gallery
+  cloneGallery.innerHTML = originalGallery.innerHTML;
+
+  let scrollX = 0;
+  let isPaused = false;
+  const scrollSpeed = 0.5;
+
+  function animateScroll() {
+    if (!isPaused) {
+      scrollX -= scrollSpeed;
+      if (Math.abs(scrollX) >= originalGallery.offsetWidth) {
+        scrollX = 0;
+      }
+      scrollContainer.style.transform = `translateX(${scrollX}px)`;
+    }
+    requestAnimationFrame(animateScroll);
+  }
+
+  scrollContainer.addEventListener('mouseenter', () => isPaused = true);
+  scrollContainer.addEventListener('mouseleave', () => {
+    isPaused = false;
+    tooltip.style.opacity = 0;
+  });
+
+  // Tooltip follow
+  scrollContainer.addEventListener('mousemove', (e) => {
+    const target = e.target.closest('a');
+    if (target && target.dataset.tooltip) {
+      tooltip.textContent = target.dataset.tooltip;
+      tooltip.style.left = `${e.pageX + 10}px`;
+      tooltip.style.top = `${e.pageY + 10}px`;
+      tooltip.style.opacity = 1;
+    } else {
+      tooltip.style.opacity = 0;
+    }
+  });
+
+  // Swipe support
+  let startX = 0;
+  let currentTranslate = 0;
+  let isDragging = false;
+
+  scrollContainer.addEventListener('touchstart', (e) => {
+    isPaused = true;
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  scrollContainer.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const delta = e.touches[0].clientX - startX;
+    scrollX += delta;
+    scrollContainer.style.transform = `translateX(${scrollX}px)`;
+    startX = e.touches[0].clientX;
+  });
+
+  scrollContainer.addEventListener('touchend', () => {
+    isDragging = false;
+    isPaused = false;
+  });
+
+  animateScroll();
+</script>
+
+
+
 </body>
 </html>
