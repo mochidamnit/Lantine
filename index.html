@@ -45,62 +45,45 @@
             text-align: center;
         }
         
-      .gallery-wrapper {
-      width: 100vw;
-      overflow: hidden;
-      background: white;
-      position: relative;
-      touch-action: pan-y;
-    }
+        .gallery-wrapper {
+        width: 100vw;
+        margin:px;
+        overflow: hidden;
+        background: white;
+        position: relative;
+        touch-action: pan-y;
+        }
 
-    .scroll-container {
-      display: flex;
-      flex-wrap: nowrap;
-      will-change: transform;
-      cursor: grab;
-    }
+        .scroll-container {
+        display: flex;
+        flex-wrap: nowrap;
+        will-change: transform;
+        cursor: grab;
+        }
 
-    .gallery {
-      display: flex;
-      gap: 20px;
-      padding: 40px;
-      margin: 50px;
-      align-items: center;
-      white-space: nowrap;
-    }
+        .gallery {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        white-space: nowrap;
+        }
 
-    .gallery a {
-      display: inline-block;
-      position: relative;
-      text-decoration: none;
-    }
+        .gallery a {
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        }
 
-    .gallery img {
-      height: 360px;
-      border-radius: 10px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
+        .gallery img {
+        height: 360px;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Floating Tooltip */
-    #tooltip {
-      position: fixed;
-      background: rgba(0, 0, 0, 0.75);
-      color: #fff;
-      padding: 6px 10px;
-      border-radius: 4px;
-      font-size: 35px;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      z-index: 9999;
-      white-space: nowrap;
-    } 
-           
+        .gallery img:hover {
+        transform: scale(1.05);
+        }
 
         footer {
             display: flex;
@@ -165,24 +148,30 @@
         <div><img src="https://via.placeholder.com/400x350" alt="Gallery image 5"></div>
         <div><img src="https://via.placeholder.com/400x450" alt="Gallery image 6"></div>
     -->
-
         <div class="gallery-wrapper" id="galleryWrapper">
-      <div class="scroll-container" id="scrollContainer">
+        <div class="scroll-container" id="scrollContainer">
         <div class="gallery">
             <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal2.PNG" alt="Gallery image 1"/>
+            <img src="jpg/gal3.PNG" alt="Gallery image 1"/>
+            <img src="jpg/gal4.png" alt="Gallery image 1"/>
             <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal2.png" alt="Gallery image 1"/>
+            <img src="jpg/gal3.png" alt="Gallery image 1"/>
+            <img src="jpg/gal4.png" alt="Gallery image 1"/>
+            <img src="jpg/gal4.png" alt="Gallery image 1"/>
+            <img src="jpg/gal4.png" alt="Gallery image 1"/>
             <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
-            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
-            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
-            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
-            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
-            <img src="jpg/gal1.jpg" alt="Gallery image 1"/>
+            <img src="jpg/gal2.png" alt="Gallery image 1"/>
+            <img src="jpg/gal3.png" alt="Gallery image 1"/>
+            <img src="jpg/gal4.png" alt="Gallery image 1"/>
+            <img src="jpg/gal4.png" alt="Gallery image 1"/>
         </div>
         <div class="gallery" id="galleryClone"></div>
       </div>
-      <div id="tooltip"></div>
     </div>
     </section>
+
 
 
 
