@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+header.nav-over-hero {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+}
+
+.nav-container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+/* Navigation links */
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Underline on hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  flex-wrap: wrap;       /* allows stacking on small screens */
+  width: 100%;
+  margin-top: 2rem; /* 👈 Add this line */
+
+}
+
+.feature-box {
+  position: relative;
+  flex: 1 1 33.333%;      /* 3 columns on larger screens */
+  overflow: hidden;
+  height: 300px; /* 👈 Set your preferred height */
+  transition: transform 0.3s ease;  
+}
+
+/* ZOOM EFFECT */
+.feature-box:hover img {
+  transform: scale(1.05);
+}
+
+/* Ensure images fill the box without distortion */
+.feature-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease; /* smooth zoom */
+
+}
+
+.feature-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.visit-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Optional: Prevent gap between images */
+.features .feature-box + .feature-box {
+  margin-left: 0;
+}
+
+/* Optional: Make sure there's no spacing due to body */
+body {
+  overflow-x: hidden;
+}
+
+.about {
+  text-align: center;
+  max-width: 800px;
+  margin: 3rem auto; /* centers and adds space around */
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about-text {
+  flex: 1;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  gap: 0; /* No gaps between images */
+ overflow: hidden;
+  height: 300px; /* 👈 Set your preferred height */
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+    .instagram-section {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .instagram-section h3 {
+      letter-spacing: 2px;
+      font-weight: normal;
+      margin-bottom: 2rem;
+    }
+    .instagram-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .instagram-grid img {
+      width: 200px;
+      height: auto;
+      border-radius: 6px;
+    }
+    .social-icons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    display: block;
+    margin: 20px 10px;
+  }
+
+
+}
+
+@media (max-width: 600px) {
+  .feature-box {
+    flex: 1 1 100%;
+    height: 250px;
+    margin-bottom: 1rem; /* 👈 Adds spacing between stacked boxes */
+  }
+
+  .feature-box:last-child {
+    margin-bottom: 0;
+  }
+}
