@@ -4,13 +4,23 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
+@font-face {
+  font-family: 'MyFont';
+  src: url('font/SanJiHuaChaoTi-Cu-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Navbar */
+
+html,body {
+  font-family: 'MyFont';
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+}
+
+/* Navbar section*/
 header.nav-over-hero {
   position: absolute;
   top: 0;
@@ -21,43 +31,61 @@ header.nav-over-hero {
 
 .nav-container {
   width: 100%;
-  padding: 1rem;
+  padding: 20px 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .logo img {
-  height: 60px;
+  height: 90px;
   width: auto;
+
 }
 
-/* Navigation links */
-nav a {
-  margin-left: 30px;
+/* VERTICAL NAV */
+.vertical-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top:10rem;
+  margin-right: 8rem;
+}
+
+.vertical-link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   text-decoration: none;
   color: white;
-  font-weight: bold;
-  position: relative;
-  transition: all 0.3s ease;
+  font-family: 'MyFont';
 }
 
-/* Underline on hover */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 100%;
-  height: 2px;
+.vertical-link .chinese {
+  writing-mode: vertical-rl;
+  font-size: 40px;
+  letter-spacing: 0.1em;
+    font-family: 'MyFont';
+
+}
+
+.vertical-link .divider {
+  width: 1px;
+  height: 0px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.vertical-link .english {
+  writing-mode: vertical-rl;
+  font-size: 25px;
+}
+
+.vertical-link:hover .divider {
   background-color: white;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-nav a:hover::after {
-  transform: scaleX(1);
+  width: 3px;
+  height: 100px;
+  transition: height 0.3s ease;
 }
 
 
@@ -82,142 +110,312 @@ nav a:hover::after {
   display: block;
 }
 
-/* Features Section */
-.features {
-  display: flex;
-  flex-wrap: wrap;       /* allows stacking on small screens */
-  width: 100%;
-  margin-top: 2rem; /* 👈 Add this line */
-
-}
-
-.feature-box {
-  position: relative;
-  flex: 1 1 33.333%;      /* 3 columns on larger screens */
-  overflow: hidden;
-  height: 300px; /* 👈 Set your preferred height */
-  transition: transform 0.3s ease;  
-}
-
-/* ZOOM EFFECT */
-.feature-box:hover img {
-  transform: scale(1.05);
-}
-
-/* Ensure images fill the box without distortion */
-.feature-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease; /* smooth zoom */
-
-}
-
-.feature-text {
+/* Center the button wrapper */
+.hero-button-wrapper {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
+  z-index: 2;
 }
 
-.visit-btn {
+/* Reuse your curved-button styles */
+.curved-button {
   display: inline-block;
-  margin-top: 0.5rem;
-  padding: 10px 20px;
+  padding: 10px 24px;
+  border: 2px solid white;
+  border-radius: 30px;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.curved-button:hover {
   background-color: white;
   color: black;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
 }
 
-/* Optional: Prevent gap between images */
-.features .feature-box + .feature-box {
-  margin-left: 0;
+.hero-contactus-wrapper {
+  position: absolute;
+  top: 90%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
-/* Optional: Make sure there's no spacing due to body */
-body {
-  overflow-x: hidden;
-}
-
-.about {
-  text-align: center;
-  max-width: 800px;
-  margin: 3rem auto; /* centers and adds space around */
-  padding: 0 1rem;
+.social-buttons {
+  font-size: 20px;
+  color: white;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-}
-.about h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.about p {
-  font-size: 1rem;
-  line-height: 1.6;
+.social-buttons a img {
+  margin-left: 10px;
+  width: auto;
+  height: 30px;
+  filter: brightness(0) invert(1); /* Makes white icons if needed */
+  transition: transform 0.3s ease;
 }
+
+.social-buttons a:hover img {
+  transform: scale(1.1);
+}
+
+
+
+
+
+/* ABOUT SECTION*/
+.about {
+  color: #b79977 ;
+  max-width: 1500px;
+            margin-top: 70px;
+            margin-bottom: 70px;
+            margin-left: auto;
+            margin-right: auto;  
+            display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.vertical-header {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-right: 80px;
+}
+
+.vertical-words {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-decoration: none;
+  color: #b79977;
+  font-family: 'MyFont';
+}
+
+.vertical-words .chinese {
+  writing-mode: vertical-rl;
+  /* Remove text-orientation: upright */
+  font-size: 40px;
+  letter-spacing: 0.1em;
+    font-family: 'MyFont';
+
+}
+
+.vertical-words .divider {
+  width: 3px;
+  height: 100px;
+  background-color: #b79977;
+}
+
+.vertical-words .english {
+  writing-mode: vertical-rl;
+  /* Remove text-orientation: upright */
+  font-size: 25px;
+}
+
 
 .about-text {
-  flex: 1;
+  font-size: 20px;
 }
 
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  gap: 0; /* No gaps between images */
- overflow: hidden;
-  height: 300px; /* 👈 Set your preferred height */
+/* SIGNATURES SECTION*/
+    .signatures {
+      padding: 5rem 5rem;
+      background-color: #ceb8a1;
+
+    }
+
+    .signature-header{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .signature-header img{
+      height: 55px;
+      width: auto;
+      margin: 20px;
+    }
+
+    .horizontal-header {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: white;
+      font-family: 'MyFont';
+      text-align: center;
+    }
+    .horizontal-header .chinese {
+      font-size: 45px;
+      font-family: 'MyFont';
+    }
+
+    .horizontal-header .divider {
+      width: 300px;
+      height: 3px;
+      background-color: white;
+    }
+
+    .horizontal-header .english {
+      font-size: 30px;
+    }
+
+
+     .signature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            max-width: 1700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .signature-card {
+            background: transparent;
+            border: 4px solid white;
+            color:white;
+            padding: 70px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 120px;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            writing-mode: vertical-rl;
+        }
+
+        .signature-card:hover {
+            background: white;
+            border-color: white;
+            color: #b79977;
+        }
+
+
+/* LOCATION SECTION*/
+.location {
+  max-width: 1500px;
+            margin-left: auto;
+            margin-right: auto;  
+            display: flex;
+            margin-top: 100px;
+            margin-bottom: 100px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.gallery img {
+.location-content{
+    font-size: 20px;
+    color: #b79977;
+    margin-right: 9rem;
+}
+.opening-hours-header{
+      display: flex;
+      flex-direction: column;
+}
+.opening-hours-header .chinese{
+      font-size: 30px;
+      margin-top: 2rem;
+}
+
+.opening-hours-header .english{
+      font-size: 25px;
+      margin-bottom: 2rem;
+
+}
+
+.line{
+      width: 440px;
+      height: 3px;
+      background-color: #b79977;
+}
+.days-and-time{
+      font-size: 20px;
+      margin-top: 20px;
+
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 50%; /* 1:1 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  border: none;
+}
+/* CAREERS SECTION*/
+
+
+.careers {
+    padding: 5rem 5rem;
+    background-color: #ceb8a1;
+    align-items: center;
+    justify-content: center;
+
 }
 
-    .instagram-section {
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    .instagram-section h3 {
-      letter-spacing: 2px;
-      font-weight: normal;
-      margin-bottom: 2rem;
-    }
-    .instagram-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-    .instagram-grid img {
-      width: 200px;
-      height: auto;
-      border-radius: 6px;
-    }
-    .social-icons {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
+.careers-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+ }
+
+        .content-section {
+            margin-top: 40px;
+            text-align: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .description-text {
+            color: white;
+            font-size: 20px;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+        .description-text p {
+            margin-bottom: 25px;
+        }
+
+        .chinese-text {
+            font-size: 25px;
+            line-height: 1.9;
+        }
 
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-container {
+
+@media (max-width: 600px) {
+    .nav-container {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -231,17 +429,35 @@ body {
     margin: 20px 10px;
   }
 
+.hero {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 }
 
-@media (max-width: 600px) {
-  .feature-box {
-    flex: 1 1 100%;
-    height: 250px;
-    margin-bottom: 1rem; /* 👈 Adds spacing between stacked boxes */
-  }
 
-  .feature-box:last-child {
-    margin-bottom: 0;
-  }
-}
+
+
+
+
+
+
+
+
+

@@ -1,113 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latine Cafe Menu</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-        }
-        .menu-section {
-            padding: 40px;
-            text-align: center;
-        }
-        .menu-section object {
-            width: 90%;
-            height: 1000px;
-            border: none;
-        }
-                footer {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            background-color: #f0f0f0;
-            padding: 30px;
-            flex-wrap: wrap;
-        }
-        .footer-column {
-            flex: 1 1 200px;
-            margin: 10px;
-        }
-        .footer-column h3 {
-            margin-bottom: 10px;
-        }
-        .footer-column p, .footer-column a {
-            margin: 5px 0;
-            color: #333;
-            text-decoration: none;
-            display: block;
-        }
-        .social-icons a {
-            margin-right: 10px;
-            font-size: 24px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wireframe Website</title>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('font/SanJiHuaChaoTi-Cu-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body, .menu-page {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'MyFont';
+
+}
+img {
+  display: block;
+
+}
+
+.menu-page {
+  display: flex;
+  height: 100vh;
+  
+}
+
+.menu-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 35vw;
+  height: 100vh;
+  background-image: url('jpg/hero2.jpg'); /* ✨ Background image here */
+  background-size: cover;
+  background-position: center;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 0;       /* <-- make sure there's no padding here */
+  margin: 0;
+  
+  color: white;
+}
+
+.menu-left-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+    width: 35vw;
+
+}
+
+/* Logo */
+.logo {
+  width: 263.46px;
+    margin:20px 30px;
+
+}
+
+/* VERTICAL NAV */
+.vertical-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 750px;
+}
+
+.vertical-link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-decoration: none;
+  color: white;
+  font-family: 'MyFont';
+}
+
+.vertical-link .chinese {
+  writing-mode: vertical-rl;
+  font-size: 40px;
+  letter-spacing: 0.1em;
+    font-family: 'MyFont';
+
+}
+
+.vertical-link .divider {
+  width: 1px;
+  height: 0px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.vertical-link .english {
+  writing-mode: vertical-rl;
+  font-size: 25px;
+}
+
+.vertical-link:hover .divider {
+  background-color: white;
+  width: 3px;
+  height: 100px;
+  transition: height 0.3s ease;
+}
+
+.hero-contactus-wrapper {
+  position: absolute;
+  top: 90%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.social-buttons {
+  font-size: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-buttons a img {
+  margin-left: 10px;
+  width: auto;
+  height: 30px;
+  filter: brightness(0) invert(1); /* Makes white icons if needed */
+  transition: transform 0.3s ease;
+}
+
+.social-buttons a:hover img {
+  transform: scale(1.1);
+}
+
+.menu-right {
+  margin-left: 35vw;
+  width: 65vw;
+}
+
+.menu-right img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+.menu-slide {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.menu-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+</style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="png/logo.png" alt="Latine Logo" height="90">
-        </div>
-        <nav>
-            <a href="index.html">Welcome</a>
-            <a href="menu.html">Menu</a>
-            <a href="index.html#gallery">Gallery</a>
-            <a href="index.html#contact">Contact Us</a>
-        </nav>
-    </header>
 
-    <section class="menu-section">
-        <h1>Our Menu</h1>
-        <p>Explore our offerings below:</p>
-        <object data="menu.pdf#view=two" type="application/pdf"></object>
-    </section>
+<div class="menu-page">
+  <!-- Left fixed section -->
+  <div class="menu-left">
+    <div class="menu-left-content">
+        <a href="home.html">
+        <img src="png/logo2.png" class="logo">
+        </a>
+            <nav class="vertical-nav">
+                <a href="menu.html" class="vertical-link">
+                    <span class="chinese">菜单</span>
+                    <span class="divider"></span>
+                    <span class="english">Menu</span>
+                </a>
+                <a href="updates.html" class="vertical-link">
+                    <span class="chinese">动态</span>
+                    <span class="divider"></span>
+                    <span class="english">Updates</span>
+                </a>
+                <a href="home.html#careers" class="vertical-link">
+                    <span class="chinese">职业</span>
+                    <span class="divider"></span>
+                    <span class="english">Careers</span>
+                </a>
+                <a href="home.html#location" class="vertical-link">
+                    <span class="chinese">门店</span>
+                    <span class="divider"></span>
+                    <span class="english">Visit Us</span>
+                </a>
+            </nav>
+       <div class="hero-contactus-wrapper">
+       
+        <div class="social-buttons"> 
+          <p>Contact Us</p>
+          <a href="https://instagram.com" target="_blank">
+            <img src="icons/ig.png" alt="Instagram">
+          </a>
+          <a href="https://tiktok.com" target="_blank">
+            <img src="icons/tt.png" alt="tiktok">
+          </a>
+          <a href="https://xiaohongshu.com" target="_blank">
+            <img src="icons/xhs.png" alt="XiaoHongShu">
+          </a>
+        </div>
+      </div>
+        </div>
+  </div>
+  
+  <!-- Right scrollable section -->
+  <div class="menu-right">
+  <div class="menu-slide"><img src="jpg/Menu-01.jpg" alt=""></div>
+  <div class="menu-slide"><img src="jpg/Menu-02.jpg" alt=""></div>
+  <div class="menu-slide"><img src="jpg/Menu-03.jpg" alt=""></div>
+  <div class="menu-slide"><img src="jpg/Menu-04.jpg" alt=""></div>
+  <div class="menu-slide"><img src="jpg/Menu-05.jpg" alt=""></div>
+  <div class="menu-slide"><img src="jpg/Menu-06.jpg" alt=""></div>
+  <div class="menu-slide"><img src="jpg/Menu-07.jpg" alt=""></div>
+    <!-- Add more as needed -->
+  </div>
+</div>
 
-        <footer>
-        <div class="footer-column">
-            <img src="png/logo.png" alt="Latine Logo" height="50">
-            <p>103 Rangoon Rd, #01-01<br>Singapore 218386</p>
-            <p>FOLLOW US</p>
-            <div class="social-icons">
-                <a href="#">📘</a>
-                <a href="#">📷</a>
-            </div>
-        </div>
-        <div class="footer-column">
-            <h3>QUICK LINKS</h3>
-            <a href="#">Home</a>
-            <a href="#">Menu</a>
-            <a href="#">Gallery</a>
-            <a href="#">Contact Us</a>
-        </div>
-        <div class="footer-column">
-            <h3>OPENING HOURS</h3>
-            <p>Monday | Closed</p>
-            <p>Tuesday | 12pm - 10:30pm</p>
-            <p>Wednesday | ______</p>
-            <p>Thursday | ______</p>
-            <p>Friday | ______</p>
-            <p>Saturday | ______</p>
-            <p>Sunday | ______</p>
-        </div>
-    </footer>
 </body>
 </html>
