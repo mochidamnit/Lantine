@@ -11,13 +11,11 @@
   font-style: normal;
 }
 
-
 html,body {
   font-family: 'MyFont';
   line-height: 1.6;
   overflow-x: hidden;
   scroll-behavior: smooth;
-
 }
 
 /* Navbar section*/
@@ -40,7 +38,6 @@ header.nav-over-hero {
 .logo img {
   height: 90px;
   width: auto;
-
 }
 
 /* VERTICAL NAV */
@@ -49,7 +46,7 @@ header.nav-over-hero {
   flex-direction: row;
   gap: 3rem;
   align-items: flex-start;
-  margin-top:10rem;
+  margin-top: 10rem;
   margin-right: 8rem;
 }
 
@@ -66,8 +63,7 @@ header.nav-over-hero {
   writing-mode: vertical-rl;
   font-size: 40px;
   letter-spacing: 0.1em;
-    font-family: 'MyFont';
-
+  font-family: 'MyFont';
 }
 
 .vertical-link .divider {
@@ -87,7 +83,6 @@ header.nav-over-hero {
   height: 100px;
   transition: height 0.3s ease;
 }
-
 
 /* Hero Section */
 .hero {
@@ -110,7 +105,6 @@ header.nav-over-hero {
   display: block;
 }
 
-/* Center the button wrapper */
 .hero-button-wrapper {
   position: absolute;
   top: 55%;
@@ -119,7 +113,6 @@ header.nav-over-hero {
   z-index: 2;
 }
 
-/* Reuse your curved-button styles */
 .curved-button {
   display: inline-block;
   padding: 10px 24px;
@@ -158,7 +151,7 @@ header.nav-over-hero {
   margin-left: 10px;
   width: auto;
   height: 30px;
-  filter: brightness(0) invert(1); /* Makes white icons if needed */
+  filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
 }
 
@@ -166,22 +159,19 @@ header.nav-over-hero {
   transform: scale(1.1);
 }
 
-
-
-
-
 /* ABOUT SECTION*/
 .about {
-  color: #b79977 ;
+  color: #b79977;
   max-width: 1500px;
-            margin-top: 70px;
-            margin-bottom: 70px;
-            margin-left: auto;
-            margin-right: auto;  
-            display: flex;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+  padding: 0 20px;
 }
 
 .vertical-header {
@@ -203,11 +193,9 @@ header.nav-over-hero {
 
 .vertical-words .chinese {
   writing-mode: vertical-rl;
-  /* Remove text-orientation: upright */
   font-size: 40px;
   letter-spacing: 0.1em;
-    font-family: 'MyFont';
-
+  font-family: 'MyFont';
 }
 
 .vertical-words .divider {
@@ -218,146 +206,142 @@ header.nav-over-hero {
 
 .vertical-words .english {
   writing-mode: vertical-rl;
-  /* Remove text-orientation: upright */
   font-size: 25px;
 }
-
 
 .about-text {
   font-size: 20px;
 }
 
-
 /* SIGNATURES SECTION*/
-    .signatures {
-      padding: 5rem 5rem;
-      background-color: #ceb8a1;
+.signatures {
+  padding: 5rem 5rem;
+  background-color: #ceb8a1;
+}
 
-    }
+.signature-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
-    .signature-header{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
+.signature-header img {
+  height: 55px;
+  width: auto;
+  margin: 20px;
+}
 
-    .signature-header img{
-      height: 55px;
-      width: auto;
-      margin: 20px;
-    }
+.horizontal-header {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: white;
+  font-family: 'MyFont';
+  text-align: center;
+}
 
-    .horizontal-header {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: white;
-      font-family: 'MyFont';
-      text-align: center;
-    }
-    .horizontal-header .chinese {
-      font-size: 45px;
-      font-family: 'MyFont';
-    }
+.horizontal-header .chinese {
+  font-size: 45px;
+  font-family: 'MyFont';
+}
 
-    .horizontal-header .divider {
-      width: 300px;
-      height: 3px;
-      background-color: white;
-    }
+.horizontal-header .divider {
+  width: 300px;
+  height: 3px;
+  background-color: white;
+}
 
-    .horizontal-header .english {
-      font-size: 30px;
-    }
+.horizontal-header .english {
+  font-size: 30px;
+}
 
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: 1700px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-     .signature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 15px;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-            max-width: 1700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.signature-card {
+  background: transparent;
+  border: 4px solid white;
+  color: white;
+  padding: 70px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 120px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  writing-mode: vertical-rl;
+}
 
-        .signature-card {
-            background: transparent;
-            border: 4px solid white;
-            color:white;
-            padding: 70px 30px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-height: 120px;
-            font-size: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            writing-mode: vertical-rl;
-        }
-
-        .signature-card:hover {
-            background: white;
-            border-color: white;
-            color: #b79977;
-        }
-
+.signature-card:hover {
+  background: white;
+  border-color: white;
+  color: #b79977;
+}
 
 /* LOCATION SECTION*/
 .location {
   max-width: 1500px;
-            margin-left: auto;
-            margin-right: auto;  
-            display: flex;
-            margin-top: 100px;
-            margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 100px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
+  padding: 0 20px;
 }
 
-.location-content{
-    font-size: 20px;
-    color: #b79977;
-    margin-right: 9rem;
-}
-.opening-hours-header{
-      display: flex;
-      flex-direction: column;
-}
-.opening-hours-header .chinese{
-      font-size: 30px;
-      margin-top: 2rem;
+.location-content {
+  font-size: 20px;
+  color: #b79977;
+  margin-right: 9rem;
 }
 
-.opening-hours-header .english{
-      font-size: 25px;
-      margin-bottom: 2rem;
-
+.opening-hours-header {
+  display: flex;
+  flex-direction: column;
 }
 
-.line{
-      width: 440px;
-      height: 3px;
-      background-color: #b79977;
+.opening-hours-header .chinese {
+  font-size: 30px;
+  margin-top: 2rem;
 }
-.days-and-time{
-      font-size: 20px;
-      margin-top: 20px;
 
+.opening-hours-header .english {
+  font-size: 25px;
+  margin-bottom: 2rem;
+}
+
+.line {
+  width: 440px;
+  height: 3px;
+  background-color: #b79977;
+}
+
+.days-and-time {
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .map {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding-top: 50%; /* 1:1 Aspect Ratio */
+  padding-top: 50%;
 }
 
 .responsive-iframe {
@@ -370,94 +354,526 @@ header.nav-over-hero {
   height: 100%;
   border: none;
 }
+
 /* CAREERS SECTION*/
-
-
 .careers {
-    padding: 5rem 5rem;
-    background-color: #ceb8a1;
-    align-items: center;
-    justify-content: center;
-
+  padding: 5rem 5rem;
+  background-color: #ceb8a1;
+  align-items: center;
+  justify-content: center;
 }
 
-.careers-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
- }
+.careers-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
-        .content-section {
-            margin-top: 40px;
-            text-align: center;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.content-section {
+  margin-top: 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-        .description-text {
-            color: white;
-            font-size: 20px;
-            line-height: 1.8;
-            padding: 0 20px;
-        }
+.description-text {
+  color: white;
+  font-size: 20px;
+  line-height: 1.8;
+  padding: 0 20px;
+}
 
-        .description-text p {
-            margin-bottom: 25px;
-        }
+.description-text p {
+  margin-bottom: 25px;
+}
 
-        .chinese-text {
-            font-size: 25px;
-            line-height: 1.9;
-        }
+.chinese-text {
+  font-size: 25px;
+  line-height: 1.9;
+}
 
+/* TABLET RESPONSIVE (768px - 1024px) */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 15px 20px;
+  }
+  
+  .logo img {
+    height: 70px;
+  }
+  
+  .vertical-nav {
+    gap: 2rem;
+    margin-top: 6rem;
+    margin-right: 4rem;
+  }
+  
+  .vertical-link .chinese {
+    font-size: 30px;
+  }
+  
+  .vertical-link .english {
+    font-size: 20px;
+  }
+  
+  .vertical-link:hover .divider {
+    height: 80px;
+  }
+  
+  .curved-button {
+    font-size: 18px;
+    padding: 8px 20px;
+  }
+  
+  .hero-contactus-wrapper {
+    left: 10%;
+  }
+  
+  .about {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 30px;
+  }
+  
+  .vertical-header {
+    margin-right: 40px;
+  }
+  
+  .vertical-words .chinese {
+    font-size: 35px;
+  }
+  
+  .vertical-words .english {
+    font-size: 22px;
+  }
+  
+  .vertical-words .divider {
+    height: 80px;
+  }
+  
+  .about-text {
+    font-size: 18px;
+  }
+  
+  .signatures {
+    padding: 3rem 3rem;
+  }
+  
+  .horizontal-header .chinese {
+    font-size: 35px;
+  }
+  
+  .horizontal-header .english {
+    font-size: 25px;
+  }
+  
+  .horizontal-header .divider {
+    width: 250px;
+  }
+  
+  .signature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .signature-card {
+    font-size: 40px;
+    padding: 50px 20px;
+  }
+  
+  .location-content {
+    margin-right: 4rem;
+    font-size: 18px;
+  }
+  
+  .line {
+    width: 300px;
+  }
+  
+  .careers {
+    padding: 3rem 3rem;
+  }
+  
+  .description-text {
+    font-size: 18px;
+  }
+  
+  .chinese-text {
+    font-size: 22px;
+  }
+}
 
-
-@media (max-width: 600px) {
-    .nav-container {
+/* MOBILE RESPONSIVE (max-width: 768px) */
+@media (max-width: 768px) {
+  .nav-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding: 15px 20px;
   }
-
-  nav {
-    margin-top: 10px;
+  
+  .logo img {
+    height: 60px;
   }
-
-  nav a {
-    display: block;
-    margin: 20px 10px;
+  
+  .vertical-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-right: 0;
+    justify-content: center;
   }
-
-.hero {
-  width: 100%;
-  height: 100vh;
-  max-height: 100vh;
-  overflow: hidden;
-  position: relative;
+  
+  .vertical-link {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .vertical-link .chinese {
+    writing-mode: horizontal-tb;
+    font-size: 24px;
+  }
+  
+  .vertical-link .english {
+    writing-mode: horizontal-tb;
+    font-size: 16px;
+  }
+  
+  .vertical-link .divider {
+    width: 0px;
+    height: 1px;
+  }
+  
+  .vertical-link:hover .divider {
+    width: 60px;
+    height: 2px;
+  }
+  
+  .hero-button-wrapper {
+    top: 50%;
+  }
+  
+  .curved-button {
+    font-size: 16px;
+    padding: 8px 18px;
+  }
+  
+  .hero-contactus-wrapper {
+    top: 85%;
+    left: 50%;
+  }
+  
+  .social-buttons {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .social-buttons a img {
+    height: 25px;
+    margin-left: 5px;
+  }
+  
+  .about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+  
+  .vertical-header {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  .vertical-words {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vertical-words .chinese {
+    writing-mode: horizontal-tb;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .vertical-words .english {
+    writing-mode: horizontal-tb;
+    font-size: 20px;
+  }
+  
+  .vertical-words .divider {
+    width: 100px;
+    height: 2px;
+    margin: 10px 0;
+  }
+  
+  .about-text {
+    font-size: 16px;
+  }
+  
+  .signatures {
+    padding: 2rem 1rem;
+  }
+  
+  .signature-header img {
+    height: 40px;
+    margin: 10px;
+  }
+  
+  .horizontal-header .chinese {
+    font-size: 28px;
+  }
+  
+  .horizontal-header .english {
+    font-size: 20px;
+  }
+  
+  .horizontal-header .divider {
+    width: 200px;
+    height: 2px;
+  }
+  
+  .signature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  
+  .signature-card {
+    font-size: 32px;
+    padding: 40px 15px;
+    min-height: 100px;
+  }
+  
+  .location {
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  
+  .location-content {
+    margin-right: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .opening-hours-header .chinese {
+    font-size: 24px;
+  }
+  
+  .opening-hours-header .english {
+    font-size: 20px;
+  }
+  
+  .line {
+    width: 250px;
+    margin: 0 auto;
+  }
+  
+  .days-and-time {
+    font-size: 16px;
+  }
+  
+  .map {
+    width: 100%;
+    padding-top: 75%;
+  }
+  
+  .careers {
+    padding: 2rem 1rem;
+  }
+  
+  .description-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  
+  .chinese-text {
+    font-size: 18px;
+  }
 }
 
-.hero-image-wrapper {
-  width: 100%;
-  height: 100%;
+/* SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 10px 15px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .vertical-nav {
+    gap: 1rem;
+  }
+  
+  .vertical-link .chinese {
+    font-size: 20px;
+  }
+  
+  .vertical-link .english {
+    font-size: 14px;
+  }
+  
+  .curved-button {
+    font-size: 14px;
+    padding: 6px 16px;
+  }
+  
+  .social-buttons {
+    font-size: 14px;
+  }
+  
+  .social-buttons a img {
+    height: 20px;
+  }
+  
+  .about {
+    padding: 0 15px;
+  }
+  
+  .vertical-words .chinese {
+    font-size: 24px;
+  }
+  
+  .vertical-words .english {
+    font-size: 16px;
+  }
+  
+  .vertical-words .divider {
+    width: 80px;
+  }
+  
+  .about-text {
+    font-size: 14px;
+  }
+  
+  .signatures {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .signature-header img {
+    height: 30px;
+    margin: 8px;
+  }
+  
+  .horizontal-header .chinese {
+    font-size: 24px;
+  }
+  
+  .horizontal-header .english {
+    font-size: 16px;
+  }
+  
+  .horizontal-header .divider {
+    width: 150px;
+  }
+  
+  .signature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+  
+  .signature-card {
+    font-size: 24px;
+    padding: 30px 10px;
+    min-height: 80px;
+  }
+  
+  .location-content {
+    font-size: 14px;
+  }
+  
+  .opening-hours-header .chinese {
+    font-size: 20px;
+  }
+  
+  .opening-hours-header .english {
+    font-size: 16px;
+  }
+  
+  .line {
+    width: 200px;
+  }
+  
+  .days-and-time {
+    font-size: 14px;
+  }
+  
+  .careers {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .description-text {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+  
+  .chinese-text {
+    font-size: 16px;
+  }
 }
 
-.hero-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* VERY SMALL MOBILE (max-width: 320px) */
+@media (max-width: 320px) {
+  .vertical-link .chinese {
+    font-size: 18px;
+  }
+  
+  .vertical-link .english {
+    font-size: 12px;
+  }
+  
+  .curved-button {
+    font-size: 12px;
+    padding: 5px 14px;
+  }
+  
+  .vertical-words .chinese {
+    font-size: 20px;
+  }
+  
+  .vertical-words .english {
+    font-size: 14px;
+  }
+  
+  .about-text {
+    font-size: 13px;
+  }
+  
+  .horizontal-header .chinese {
+    font-size: 20px;
+  }
+  
+  .horizontal-header .english {
+    font-size: 14px;
+  }
+  
+  .horizontal-header .divider {
+    width: 120px;
+  }
+  
+  .signature-card {
+    font-size: 20px;
+    padding: 25px 8px;
+  }
+  
+  .line {
+    width: 180px;
+  }
+  
+  .description-text {
+    font-size: 13px;
+  }
+  
+  .chinese-text {
+    font-size: 15px;
+  }
 }
-
-}
-
-
-
-
-
-
-
-
-
-
-
