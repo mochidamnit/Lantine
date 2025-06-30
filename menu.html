@@ -25,6 +25,7 @@ html, body, .menu-page {
   padding: 0;
   overflow-x: hidden;
   font-family: 'MyFont';
+  
 
 }
 img {
@@ -73,78 +74,80 @@ img {
 
 }
 
-/* VERTICAL NAV */
-.vertical-nav {
-  display: flex;
-  flex-direction: row;
-  gap: 2.5rem;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 750px;
-}
+   /* VERTICAL NAV */
+    .vertical-nav {
+      display: flex;
+      flex-direction: row;
+      gap: 2.5rem;
+      align-items: flex-start;
+      justify-content: center;
+      margin-top: auto;
+      margin-bottom: 150px;
+    }
 
-.vertical-link {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  text-decoration: none;
-  color: white;
-  font-family: 'MyFont';
-}
+    .vertical-link {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      text-decoration: none;
+      color: white;
+      font-family: 'MyFont', Arial, sans-serif;
+    }
 
-.vertical-link .chinese {
-  writing-mode: vertical-rl;
-  font-size: 40px;
-  letter-spacing: 0.1em;
-    font-family: 'MyFont';
+    .vertical-link .chinese {
+      writing-mode: vertical-rl;
+      font-size: 40px;
+      letter-spacing: 0.1em;
+      font-family: 'MyFont', Arial, sans-serif;
+    }
 
-}
+    .vertical-link .divider {
+      width: 1px;
+      height: 0px;
+      background-color: rgba(255, 255, 255, 0.8);
+      margin: 0 10px;
+    }
 
-.vertical-link .divider {
-  width: 1px;
-  height: 0px;
-  background-color: rgba(255, 255, 255, 0.8);
-}
+    .vertical-link .english {
+      writing-mode: vertical-rl;
+      font-size: 25px;
+    }
 
-.vertical-link .english {
-  writing-mode: vertical-rl;
-  font-size: 25px;
-}
+    .vertical-link:hover .divider {
+      background-color: white;
+      width: 3px;
+      height: 100px;
+      transition: height 0.3s ease;
+    }
 
-.vertical-link:hover .divider {
-  background-color: white;
-  width: 3px;
-  height: 100px;
-  transition: height 0.3s ease;
-}
+    .hero-contactus-wrapper {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
 
-.hero-contactus-wrapper {
-  position: absolute;
-  top: 90%;
-  left: 42%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
+    .social-buttons {
+      font-size: 20px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
 
-.social-buttons {
-  font-size: 20px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
+    .social-buttons a img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
 
-.social-buttons a img {
-  margin-left: 10px;
-  width: auto;
-  height: 30px;
-  filter: brightness(0) invert(1); /* Makes white icons if needed */
-  transition: transform 0.3s ease;
-}
+    .social-buttons a:hover img {
+      transform: scale(1.1);
+    }
 
-.social-buttons a:hover img {
-  transform: scale(1.1);
-}
 
 .menu-right {
   margin-left: 35vw;
